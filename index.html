@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conway's Game of Life</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Conway's Game of Life</h1>
+    <h3>A simulation re-made by Flake Org </h3>
+    <p> and partially chat-gpt </p>
+
+    <div id="grid"></div>
+
+    <button id="startButton">Start</button>
+    <button id="stopButton">Stop</button>
+    <button id="randomButton">Random</button>
+    <button id="clearButton">Clear</button>
+
+    <form action="/action_page.php">
+        <!-- Slider to control simulation speed -->
+        <label for="speedRange">Speed: </label>
+        <input type="range" id="speedRange" min="50" max="1000" value="100" step="50">
+        <span id="speedValue">100 ms</span>
+
+        <label for="cellColorPicker">Alive Cell Color: </label>
+        <input type="color" id="cellColorPicker" value="#f39c12">
+        <input type="reset" value="Reset">
+    </form>
+
+    <!-- Display the step count -->
+    <p>Steps Taken: <span id="stepCounter">0</span></p>
+
+    <!-- Save and Load Pattern Controls -->
+    <button id="savePatternButton">Save Pattern</button>
+    <select id="loadPatternSelect">
+        <option value="">Select a pattern to load</option>
+    </select>
+    <button id="loadPatternButton">Load Pattern</button>
+    <button id="deletePatternButton">Delete Pattern</button>
+
+    <script src="script.js"></script>
+
+    <h1>What is Conway's game of life?</h1>
+    <p> Conway's game of life was a game made by the mathematician <a href="https://en.wikipedia.org/wiki/John_Horton_Conway">John Horton Conway</a>. Conway's game of life is a cellular automation used to represent the following rules: </p>
+</body>
+</html>
+
