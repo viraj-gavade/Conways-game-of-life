@@ -1,11 +1,11 @@
-/* Dark Mode Styling */
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #1e1e1e;  /* Dark background */
-    color: #f1f1f1;  /* Light text color */
+    background-color: #1e1e1e;
+    color: #f1f1f1;
     margin: 0;
     padding: 20px;
     min-height: 100vh;
@@ -25,21 +25,21 @@ h1 {
     gap: 2px;
     margin: 30px 0;
     padding: 15px;
-    background-color: #2e2e2e;  /* Slightly lighter dark color for the grid */
+    background-color: #2e2e2e;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Deeper shadow for dark mode */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .cell {
     width: 18px;
     height: 18px;
-    background-color: #3e3e3e;  /* Dark grey for inactive cells */
+    background-color: #3e3e3e;
     border-radius: 4px;
     transition: background-color 0.2s ease;
 }
 
 .cell.alive {
-    background-color: #f39c12;  /* Bright color for alive cells */
+    background-color: #f39c12;
     box-shadow: 0 2px 5px rgba(243, 156, 18, 0.5);
 }
 
@@ -64,9 +64,9 @@ button:active {
     transform: translateY(0);
 }
 
-/* Unique button colors for start, stop, etc. */
+
 #startButton {
-    background-color: #27ae60;  /* Green */
+    background-color: #27ae60; 
     box-shadow: 0 4px 8px rgba(39, 174, 96, 0.5);
 }
 
@@ -75,7 +75,7 @@ button:active {
 }
 
 #stopButton {
-    background-color: #e74c3c;  /* Red */
+    background-color: #e74c3c;
     box-shadow: 0 4px 8px rgba(231, 76, 60, 0.5);
 }
 
@@ -84,7 +84,7 @@ button:active {
 }
 
 #randomButton {
-    background-color: #f39c12;  /* Orange */
+    background-color: #f39c12;
     box-shadow: 0 4px 8px rgba(243, 156, 18, 0.5);
 }
 
@@ -93,7 +93,7 @@ button:active {
 }
 
 #clearButton {
-    background-color: #9b59b6;  /* Purple */
+    background-color: #9b59b6;
     box-shadow: 0 4px 8px rgba(155, 89, 182, 0.5);
 }
 
@@ -103,13 +103,13 @@ button:active {
 
 input[type="reset"] {
   background-color: #3989FF;
-  color: white;              /* White text */
-  padding: 10px 20px;         /* Spacing inside the button */
-  border: none;               /* Remove border */
-  border-radius: 5px;         /* Rounded corners */
-  cursor: pointer;            /* Pointer cursor on hover */
-  font-size: 16px;            /* Text size */
-  box-shadow: 0 4px 8px rgba(57, 137, 255, 0.5);  /* Box shadow for reset button */
+  color: white;       
+  padding: 10px 20px;     
+  border: none;              
+  border-radius: 5px;         
+  cursor: pointer;            
+  font-size: 16px;           
+  box-shadow: 0 4px 8px rgba(57, 137, 255, 0.5);
 }
 
 /* Slider Styling */
