@@ -213,5 +213,6 @@ label {
 
 form label, form input, form span {
     display: block;
+    text-align: center'
     margin-bottom: 10px;
 }
