@@ -213,6 +213,6 @@ label {
 
 form label, form input, form span {
     display: block;
-    text-align: center'
+    text-align: flex;
     margin-bottom: 10px;
 }
