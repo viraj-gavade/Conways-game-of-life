@@ -7,6 +7,7 @@ let intervalId;
 let speed = 100; // Default speed in ms
 let aliveCellColor = '#f39c12'; // Default alive cell color
 let stepCount = 0; // Step counter to track generations
+let aliveCellImage = null; // Variable to store the image URL for alive cells
 
 const gridElement = document.getElementById("grid");
 const speedRange = document.getElementById("speedRange");
@@ -227,6 +228,19 @@ document.getElementById("savePatternButton").addEventListener("click", savePatte
 document.getElementById("loadPatternButton").addEventListener("click", loadPattern);
 document.getElementById("deletePatternButton").addEventListener("click", deletePattern);
 
+// Event listener for changing alive cell picture
+document.getElementById("cellPicturePicker").addEventListener("input", function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            aliveCellImage = e.target.result; // Store the image data URL
+            updateGrid(); // Repaint the grid with the new image
+        };
+        reader.readAsDataURL(file); // Read the file as a Data URL
+    }
+});
+
 // Change simulation speed
 speedRange.addEventListener("input", function() {
     speed = speedRange.value;
@@ -242,6 +256,32 @@ cellColorPicker.addEventListener("input", function() {
     aliveCellColor = cellColorPicker.value;
     updateGrid(); // Repaint the grid with new color
 });
+
+// Update the display of the grid
+function updateGrid() {
+    gridElement.childNodes.forEach((cell, index) => {
+        const row = Math.floor(index / cols);
+        const col = index % cols;
+        if (grid[row][col] === 1) {
+            if (aliveCellImage) {
+                // Use the uploaded image as the background
+                cell.style.backgroundImage = `url(${aliveCellImage})`;
+                cell.style.backgroundSize = 'cover';
+                cell.style.backgroundColor = 'transparent'; // Remove background color
+                cell.style.boxShadow = 'none'; // Remove shadow if image is used
+            } else {
+                // Fallback to color if no image is used
+                cell.style.backgroundColor = aliveCellColor;
+                cell.style.backgroundImage = 'none';
+                cell.style.boxShadow = `0 2px 5px ${aliveCellColor}88`;
+            }
+        } else {
+            cell.style.backgroundColor = '#3e3e3e'; // Inactive cell color
+            cell.style.backgroundImage = 'none'; // Remove any image for dead cells
+            cell.style.boxShadow = 'none';
+        }
+    });
+}
 
 // Reset button resets speed, color, and grid
 form.addEventListener("reset", function() {
