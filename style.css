@@ -210,3 +210,8 @@ label {
 #deletePatternButton:hover {
     background-color: #e67e22;
 }
+
+form label, form input, form span {
+    display: block;
+    margin-bottom: 10px;
+}
