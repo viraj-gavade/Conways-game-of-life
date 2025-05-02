@@ -224,4 +224,5 @@ form label, form input, form span {
     padding: 10px; /* Add padding */
     font-size: 14px; /* Adjust font size */
     cursor: pointer; /* Change cursor to pointer */
+    box-shadow: 0 4px 8px rgba(103, 8, 191, 0.5);
 }
